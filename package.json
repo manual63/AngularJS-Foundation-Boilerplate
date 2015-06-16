@@ -1,0 +1,25 @@
+{
+  "name": "Angular-Project",
+  "version": "1.1.0",
+  "description": "AngularJS Project with Gulp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://manual63@github.com/manual63/Angular-Project.git"
+  },
+  "author": "Shad Holland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manual63/Angular-Project/issues"
+  },
+  "homepage": "https://github.com/manual63/Angular-Project",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-sass": "^2.0.1",
+    "gulp-uglify": "^1.2.0"
+  }
+}

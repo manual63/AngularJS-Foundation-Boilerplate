@@ -1,2 +1,26 @@
 <h1>Contact Us</h1>
 <p>Contact info could go here, including an email form.</p>
+<form>
+	<div>
+		<label>Name:</label>
+		<input type="text" ng-model="messageData.name">
+	</div>
+	<div>
+		<label>Email Address:</label>
+		<input type="email" ng-model="messageData.email">
+	</div>
+	<div>
+		<label>Message:</label>
+		<textarea ng-model="messageData.message"></textarea>
+	</div>
+</form>
+
+<div>
+	Name: {{ messageData.name }}
+</div>
+<div>
+	Email: {{ messageData.email }}
+</div>
+<div>
+	Message: {{ messageData.message }}
+</div>

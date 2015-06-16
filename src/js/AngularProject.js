@@ -1,4 +1,4 @@
-var angularProject = angular.module('AngularProject', ['ngRoute', 'MenuService']);
+var angularProject = angular.module('AngularProject', ['ngRoute', 'MenuService', 'FAQService']);
 
 /**
  * Configure the Routes

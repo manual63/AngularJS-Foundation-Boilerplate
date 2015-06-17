@@ -7,15 +7,10 @@ angularProject.directive('slideShow', function() {
     link: function(scope, elem, attrs) {
       scope.slides = ["./img/slide1.jpg", "./img/slide2.jpg", "./img/slide3.jpg"];
 
-      // elem.bind('click', function() {
-      //   //elem.css('background-color', 'white');
-      //   scope.$apply(function() {
-      //     scope.slides = ["white", "purple", "brown"];
-      //   });
-      // });
-      elem.bind('mouseover', function() {
-        elem.css('cursor', 'pointer');
-      });
+      setTimeout( function() {
+        $(document).foundation('orbit');
+      }, 0);
+      
     }
   };
 });

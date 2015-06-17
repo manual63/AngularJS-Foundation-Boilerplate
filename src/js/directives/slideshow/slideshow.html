@@ -1,1 +1,5 @@
-<div class="slideshow"><img ng-repeat="slide in slides" src="{{ slide }}"></div>
+<ul data-orbit>
+	<li ng-repeat="slide in slides">
+		<img src="{{ slide }}">
+	</li>
+</ul>

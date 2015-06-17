@@ -4,15 +4,15 @@ angularProject.controller('LandingController', function($scope) {
 	$scope.slides = [
 		{
 			img: './img/slide1.jpg',
-			caption: 'This is slide 1',
+			caption: 'Generation 5 Custom Black Camaro',
 		},
 		{
 			img: './img/slide2.jpg',
-			caption: 'This is slide 2'
+			caption: 'New 2016 Camaro SS'
 		},
 		{
 			img: './img/slide3.jpg',
-			caption: 'This is slide 3'
+			caption: '650 Horsepower Corvette Z06'
 		}
 	];
 });

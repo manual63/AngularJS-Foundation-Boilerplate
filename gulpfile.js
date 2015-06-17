@@ -14,7 +14,8 @@ gulp.task( 'sass', function() {
 var projectFiles = [
 	'./src/js/AngularProject.js',
 	'./src/js/controllers/*.js',
-	'./src/js/services/*.js'
+	'./src/js/services/*.js',
+	'./src/js/directives/**/*.js'
 ];
 
 gulp.task( 'uglify', function() {
@@ -46,7 +47,9 @@ var directories = [
 	'./src/views/*.html',
 	'./src/index.html',
 	'./src/js/libs/modernizr.js',
-	'./src/css/foundation.min.css'
+	'./src/css/foundation.min.css',
+	'./src/js/directives/**/*.html',
+	'./src/img/*'
 ]
 
 gulp.task( 'move', function() {

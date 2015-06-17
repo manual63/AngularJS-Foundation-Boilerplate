@@ -5,4 +5,4 @@ SASS is being used as the CSS preprocessor
 
 This project is using the full foundation library.
 
-[View Page](www.shadholland.com/projects/angularfoundation)
+[View Page](http://www.shadholland.com/projects/angularfoundation)

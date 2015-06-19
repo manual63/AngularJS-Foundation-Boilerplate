@@ -1,7 +1,8 @@
 var gulp = require( 'gulp' ),
 sass = require( 'gulp-sass' ),
 uglify = require( 'gulp-uglify' ),
-concat = require( 'gulp-concat' );
+concat = require( 'gulp-concat' ),
+sourcemaps = require( 'gulp-sourcemaps' );
 
 gulp.task( 'default', [ 'sass', 'move', 'uglify', 'concat-libs' ]);
 
@@ -22,7 +23,8 @@ gulp.task( 'uglify', function() {
 	return gulp.src( projectFiles )
 	.pipe( concat( 'project.js' ) )
     .pipe( uglify({
-        mangle: false
+        mangle: false,
+        outSourceMap: true
     }))
     .pipe(gulp.dest( './dist/js' ));
 });

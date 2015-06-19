@@ -21,11 +21,12 @@ var projectFiles = [
 
 gulp.task( 'uglify', function() {
 	return gulp.src( projectFiles )
+	.pipe( sourcemaps.init() )
 	.pipe( concat( 'project.js' ) )
     .pipe( uglify({
-        mangle: false,
-        outSourceMap: true
+        mangle: false
     }))
+    .pipe( sourcemaps.write('./') )
     .pipe(gulp.dest( './dist/js' ));
 });
 

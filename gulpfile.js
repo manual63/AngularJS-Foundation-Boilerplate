@@ -1,7 +1,8 @@
 var gulp = require( 'gulp' ),
 sass = require( 'gulp-sass' ),
 uglify = require( 'gulp-uglify' ),
-concat = require( 'gulp-concat' );
+concat = require( 'gulp-concat' ),
+sourcemaps = require( 'gulp-sourcemaps' );
 
 gulp.task( 'default', [ 'sass', 'move', 'uglify', 'concat-libs' ]);
 
@@ -20,10 +21,12 @@ var projectFiles = [
 
 gulp.task( 'uglify', function() {
 	return gulp.src( projectFiles )
+	.pipe( sourcemaps.init() )
 	.pipe( concat( 'project.js' ) )
     .pipe( uglify({
         mangle: false
     }))
+    .pipe( sourcemaps.write('./') )
     .pipe(gulp.dest( './dist/js' ));
 });
 

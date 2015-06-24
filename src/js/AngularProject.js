@@ -1,15 +1,17 @@
-var angularProject = angular.module('AngularProject', ['ui.router', 'MenuService', 'FAQService']);
+var angularProject = angular.module('AngularProject', ['ui.router', 'MenuService', 'FAQService', 'ProductService']);
 
 /**
  * Configure the Routes
  */
 angularProject.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider ) {
 
-    $urlRouterProvider.otherwise('404');
+    $urlRouterProvider
+        .when('', '/')
+        .otherwise('404');
 
     $stateProvider
         .state('home', {
-            url: '/home',
+            url: '/',
             controller: 'LandingController',
             templateUrl: 'views/landing.html'
         })
@@ -17,6 +19,16 @@ angularProject.config(['$stateProvider', '$urlRouterProvider', function ($stateP
             url: '/products',
             controller: 'ProductsController',
             templateUrl: 'views/products.html'            
+        })
+        .state('products.list',{
+            url: '/list',
+            controller: 'ProductListController',
+            templateUrl: 'views/productlist.html'
+        })
+        .state('products.list.product',{
+            url: '/product/:id',
+            controller: 'ProductController',
+            templateUrl: 'views/product.html'
         })
         .state('about',{
             url: '/about',
@@ -38,18 +50,4 @@ angularProject.config(['$stateProvider', '$urlRouterProvider', function ($stateP
             controller: 'ErrorController',
             templateUrl: 'views/404.html'
         });
-
-
-
- //  $routeProvider
- //    // Landing Page
- //    .when("/", {templateUrl: "views/landing.html", controller: "LandingController"})
- //    // Pages
- //    .when("/products", {templateUrl: "views/products.html", controller: "ProductsController"})
- //    .when("/about", {templateUrl: "views/about.html", controller: "AboutController"})
-	// .when("/contact", {templateUrl: "views/contact.html", controller: "ContactController"})
-	// .when("/faq", {templateUrl: "views/faq.html", controller: "FAQController"})
- //    .when("/404", {templateUrl: "views/404.html", controller: "ErrorController"})
- //    // else 404
- //    .otherwise({redirectTo: "/404"});
 }]);

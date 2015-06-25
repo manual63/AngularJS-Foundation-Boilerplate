@@ -1,4 +1,10 @@
-<ul>
-	<li ng-repeat="product in products"><a ui-sref="products.list.product({id: product.id})">{{ product.name }}</a></li>
-</ul>
-<div ui-view>
+<div class="row">
+	<div class="large-3 columns">
+		<ul class="products-list">
+			<li ng-repeat="product in products"><a ui-sref="products.list.product({id: product.id})">{{ product.name }}</a></li>
+		</ul>
+	</div>
+	<div class="large-9 columns">
+		<div ui-view>
+	</div>
+</div>

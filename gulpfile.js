@@ -37,7 +37,8 @@ var libraryFiles = [
 	'./src/js/libs/angular.min.js',
 	'./src/js/libs/angular-route.min.js',
 	'./src/js/libs/angular-ui-router.min.js',
-	'./src/js/libs/angular-resource.min.js'
+	'./src/js/libs/angular-resource.min.js',
+	'./src/js/libs/angular-sanitize.min.js'
 ];
 
 gulp.task( 'concat-libs', function() {

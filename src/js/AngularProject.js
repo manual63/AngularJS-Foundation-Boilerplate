@@ -1,4 +1,4 @@
-var angularProject = angular.module('AngularProject', ['ui.router', 'MenuService', 'FAQService', 'ProductService']);
+var angularProject = angular.module('AngularProject', ['ui.router', 'MenuService', 'FAQService', 'ProductService', 'ngSanitize']);
 
 /**
  * Configure the Routes
@@ -28,7 +28,12 @@ angularProject.config(['$stateProvider', '$urlRouterProvider', function ($stateP
         .state('products.list.product',{
             url: '/product/:id',
             controller: 'ProductController',
-            templateUrl: 'views/product.html'
+            templateUrl: 'views/product.html',
+            resolve: {
+                productData: function($q, Product) {
+                    return Product;
+                }
+            }
         })
         .state('about',{
             url: '/about',

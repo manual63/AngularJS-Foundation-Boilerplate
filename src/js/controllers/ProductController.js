@@ -1,5 +1,5 @@
-angularProject.controller('ProductController', function($scope, $state, $stateParams, Product) {
+angularProject.controller('ProductController', function($scope, $state, $stateParams, productData) {
 	console.log( 'Initialized Product Controller!');
 	$scope.productId = $stateParams.id;
-	$scope.product = Product.query({ productId: $scope.productId });
+	$scope.product = productData.query({ productId: $scope.productId });
 });

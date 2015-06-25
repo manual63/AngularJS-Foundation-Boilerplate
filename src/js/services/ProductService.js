@@ -7,3 +7,11 @@ productService.factory('Products', ['$resource',
 		});
 	}
 ]);
+
+productService.factory('Product', ['$resource',
+	function($resource){
+		return $resource('data/product.json:id', {id: '@productId'}, {
+			query: {method:'GET', params:{}}
+		});
+	}
+]);

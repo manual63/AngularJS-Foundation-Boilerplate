@@ -3,7 +3,7 @@ angularProject.directive('slideShow', function() {
     scope: {},
     restrict: 'AE',
     replace: true,
-    templateUrl: './js/directives/slideshow/slideshow.html',
+    templateUrl: './common/js/directives/slideshow/slideshow.html',
     link: function(scope, elem, attrs) {
       scope.slides = scope.$eval(attrs.slides);
 

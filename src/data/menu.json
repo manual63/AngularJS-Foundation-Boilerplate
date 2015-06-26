@@ -1,22 +1,22 @@
 [
 	{
 		"text":"Home",
-		"link":"/"
+		"link":"home"
 	},
 	{
 		"text":"Products",
-		"link":"/products"
+		"link":"products"
 	},
 	{
 		"text":"About",
-		"link":"/about"
+		"link":"about"
 	},
 	{
 		"text":"Contact Us",
-		"link":"/contact"
+		"link":"contact.form"
 	},
 	{
 		"text":"FAQ",
-		"link":"/faq"
+		"link":"faq"
 	}
 ]

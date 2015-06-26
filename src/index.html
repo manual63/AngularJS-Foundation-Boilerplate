@@ -3,9 +3,9 @@
 	<head>
 		<title>Angular Project</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-    	<link rel="stylesheet" href="css/foundation.min.css" />
+    	<link rel="stylesheet" href="libs/foundation/css/foundation.min.css" />
 		<link rel="stylesheet" href="css/main.css">
-		<script src="js/libs/modernizr.js"></script>
+		<script src="libs/foundation/js/modernizr.js"></script>
 	</head>
 	<body ng-app="AngularProject">
 
@@ -19,14 +19,14 @@
 				<nav ng-controller="MenuController" class="left-off-canvas-menu">
 					<ul>
 						<li ng-repeat="link in menuList">
-							<a href="#{{link.link}}">{{link.text}}</a>
+							<a ui-sref="{{link.link}}">{{link.text}}</a>
 						</li>
 					</ul>
 				</nav>
 				<!-- End Menu -->
 
 				<!-- Main content -->
-				<div class="content-main" ng-view></div>
+				<div class="content-main" ui-view></div>
 
 			  <!-- close the off-canvas menu -->
 			  	<a class="exit-off-canvas"></a>
@@ -36,11 +36,12 @@
 
 		<!-- Libs -->
 		<script src="js/libraries.js"></script>
-		<script>
-			$(document).foundation();
-		</script>
 
 		<!-- Project -->
 		<script src="js/project.js"></script>
+
+		<script>
+			$(document).foundation();
+		</script>
 	</body>
 </html>

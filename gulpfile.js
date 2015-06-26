@@ -7,16 +7,14 @@ sourcemaps = require( 'gulp-sourcemaps' );
 gulp.task( 'default', [ 'sass', 'move', 'uglify', 'concat-libs' ]);
 
 gulp.task( 'sass', function() {
-	return gulp.src( './src/sass/main.sass' )
+	return gulp.src( './src/common/sass/main.sass' )
 		.pipe( sass() )
 		.pipe( gulp.dest( './dist/css' ) );
 });
 
 var projectFiles = [
-	'./src/js/AngularProject.js',
-	'./src/js/controllers/*.js',
-	'./src/js/services/*.js',
-	'./src/js/directives/**/*.js'
+	'./src/common/js/**/*.js',
+	'./src/modules/**/*.js'
 ];
 
 gulp.task( 'uglify', function() {
@@ -31,14 +29,14 @@ gulp.task( 'uglify', function() {
 });
 
 var libraryFiles = [
-	'./src/js/libs/jquery.js',
-	'./src/js/libs/fastclick.js',
-	'./src/js/libs/foundation.min.js',
-	'./src/js/libs/angular.min.js',
-	'./src/js/libs/angular-route.min.js',
-	'./src/js/libs/angular-ui-router.min.js',
-	'./src/js/libs/angular-resource.min.js',
-	'./src/js/libs/angular-sanitize.min.js'
+	'./src/libs/jquery/js/jquery.js',
+	'./src/libs/foundation/js/fastclick.js',
+	'./src/libs/foundation/js/foundation.min.js',
+	'./src/libs/angular/js/angular.min.js',
+	'./src/libs/angular/js/angular-route.min.js',
+	'./src/libs/angular/js/angular-ui-router.min.js',
+	'./src/libs/angular/js/angular-resource.min.js',
+	'./src/libs/angular/js/angular-sanitize.min.js'
 ];
 
 gulp.task( 'concat-libs', function() {
@@ -49,12 +47,12 @@ gulp.task( 'concat-libs', function() {
 
 var directories = [
 	'./src/data/*.json',
-	'./src/views/*.html',
+	'./src/modules/**/views/*.html',
 	'./src/index.html',
-	'./src/js/libs/modernizr.js',
-	'./src/css/foundation.min.css',
-	'./src/js/directives/**/*.html',
-	'./src/img/*'
+	'./src/libs/foundation/js/modernizr.js',
+	'./src/libs/foundation/css/foundation.min.css',
+	'./src/common/js/directives/**/*.html',
+	'./src/common/img/*'
 ]
 
 gulp.task( 'move', function() {

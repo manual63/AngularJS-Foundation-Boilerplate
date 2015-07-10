@@ -1,10 +1,23 @@
 var gulp = require( 'gulp' ),
+runSequence= require( 'run-sequence' ),
 sass = require( 'gulp-sass' ),
 uglify = require( 'gulp-uglify' ),
 concat = require( 'gulp-concat' ),
-sourcemaps = require( 'gulp-sourcemaps' );
+sourcemaps = require( 'gulp-sourcemaps' ),
+watch = require('gulp-watch'),
+clean = require('gulp-clean'),
+server = require( 'gulp-develop-server' );
 
-gulp.task( 'default', [ 'sass', 'move', 'uglify', 'concat-libs' ]);
+gulp.task( 'default', [ 'watch', 'server:start', 'build' ]);
+
+gulp.task( 'clean', function() {
+	return gulp.src( './dist', {read: false} )
+		.pipe( clean( { force: true } ) );
+});
+
+gulp.task( 'build', function(cb) {
+	runSequence('clean', [ 'sass', 'move', 'uglify', 'concat-libs' ], cb );
+});
 
 gulp.task( 'sass', function() {
 	return gulp.src( './src/common/sass/main.sass' )
@@ -58,4 +71,18 @@ var directories = [
 gulp.task( 'move', function() {
 	gulp.src( directories, { base: './src' })
 		.pipe( gulp.dest( './dist/' ));
+});    
+ 
+// run server 
+gulp.task( 'server:start', function() {
+    server.listen( { path: './server.js' } );
 });
+ 
+// restart server if server.js changed 
+gulp.task( 'server:restart', function() {
+    gulp.watch( [ './server.js' ], server.restart );
+});
+
+gulp.task( 'watch', function() {
+	gulp.watch( [ './src/**/**' ], [ 'build' ] );
+})
